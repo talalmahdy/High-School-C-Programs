@@ -1,0 +1,92 @@
+//Program to read,sort and display student structure record
+
+
+
+
+#include<iostream.h>
+#include<process.h>
+#include<string.h>
+#include<conio.h>
+
+
+
+struct student
+{
+char name[15];
+float marks;
+int adno;
+}st[10];
+
+
+void rname();
+void dname();
+void sname();
+
+
+void main()
+{
+clrscr();
+int ch;
+do
+{
+cout<<"\nMAIN MENU";
+cout<<"\n\n1.Rname\n2.Sname\n3.Dname\n4.Exit\n\nEnter your choice: ";
+cin>>ch;
+switch(ch)
+{
+case 1: rname();
+break;
+case 2: sname();
+break;
+case 3: dname();
+break;
+case 4: exit(0);
+break;
+default:cout<<"\nWrong Entry";
+}
+}
+while(ch<5);
+}
+
+
+
+void rname()
+{
+for (int i=0;i<5;i++)
+{
+cout<<"\nEnter name: ";
+cin>>st[i].name;
+cout<<"\nEnter marks: ";
+cin>>st[i].marks;
+cout<<"\nEnter admission number: ";
+cin>>st[i].adno;
+}
+}
+
+
+
+void sname()
+{
+student temp;
+for(int i=0;i<5;i++)
+for(int j=i+1;j<5;j++)
+{
+if(strcmp(st[i].name,st[j].name)>0)
+{
+temp=st[i];
+st[i]=st[j];
+st[j]=temp;
+}
+}
+}
+
+
+
+void dname()
+{
+cout<<"\n Name\t Marks\t Adno \n";
+for(int i=0;i<5;i++)
+{
+cout<<st[i].name<<"\t"<<st[i].marks<<"\t"<<st[i].adno<<"\t"<<"\n";
+}
+} 

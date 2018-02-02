@@ -1,0 +1,105 @@
+//Program to read, calculate and display customer details 
+
+
+
+#include<iostream.h>
+#include<conio.h>
+#include<process.h>
+
+
+
+class bank
+{
+char name[20];
+char acctype[10],dttr[11];
+long accno;
+double amt,temp;
+public:
+
+void input();
+void withdraw();
+void deposit();
+void display();
+};
+
+
+
+void bank::input()
+{
+cout<<"\n Enter the account holder's name  :";
+cin>>name;
+cout<<"\n Enter the customer's account number:";
+cin>>accno;
+cout<<"\n Enter the customer's account type  :";
+cin>>acctype;
+cout<<"\n Enter the date of transaction  :";
+cin>>dttr;
+cout<<"\n Enter the amount    :";
+cin>>amt;
+}
+
+
+
+void bank::deposit()
+{
+cout<<"\n Balance amount   :"<<amt;
+cout<<"\n Enter the amount  to be deposited  :";
+cin>>temp;
+amt+=temp;
+cout<<"\n Amount deposited   :"<<temp;
+cout<<"\nBalance amount      :"<<amt;
+}
+
+
+
+void bank::withdraw()
+{
+cout<<"\nBalance amount            :"<<amt;
+cout<<"\n Enter the amount  to be withdraw  :";
+cin>>temp;
+amt-=temp;
+cout<<"\n Amount withdrawn:"<<temp;
+cout<<"\nBalance amount:"<<amt;
+}
+
+
+
+void bank::display()
+{
+cout<<"\n Account number:"<<accno;
+cout<<"\n Account holder's name   :"<<name;
+cout<<"\nBalance amount           :"<<amt;
+cout<<"\nLast date of transaction :"<<dttr;
+}
+
+
+
+void main()
+{
+bank bk;   // object 
+clrscr();
+int ch;
+do
+{
+cout<<"\n MAIN MENU";
+cout<<"\n\n1.Input \n2.Deposit\n3.Withdraw\n4.Display \n5.Exit";
+cout<<"\n Enter your choice:";
+cin>>ch;
+
+switch(ch)
+{
+case 1:bk.input();
+break;
+case 2:bk.deposit();
+break;
+case 3:bk.withdraw();
+break;
+case 4:bk.display();
+break;
+case 5:exit(0);
+break;
+default: cout<<"\nWorng Entry";
+}
+}
+while(ch<6);
+}

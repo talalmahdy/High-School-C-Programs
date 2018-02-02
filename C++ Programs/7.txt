@@ -1,0 +1,60 @@
+//Program to push and pop an element from a stack
+
+
+
+#include<iostream.h>
+#include<process.h>
+#include<conio.h>
+const int size=5;
+
+void push(int stack[], int &top, int val)
+{
+if(top==size-1)
+cout<<"\n overflow";
+else
+{
+top++;
+stack[top]=val;
+}}
+void pop(int stack[], int &top)
+{
+if(top==-1)
+cout<<"\n underflow";
+else
+{
+stack[top]=0;
+top--;
+}}
+void disp(int stack[], int & top)
+{
+cout<<"\n\nstack\n";
+for(int i=top;i>=0;i--)
+cout<<stack[i]<<"\n";
+}
+void main()
+{clrscr();
+int ch, val, top=-1,a[size];
+do{
+cout<<"\nMAIN MENU";
+cout<<"\n\n1.push\n2.pop\n3.Display\n4.exit";
+cout<<"\nEnter choice:";
+cin>>ch;
+switch(ch)
+{
+case 1:
+{cout<<"\n Enter value";
+cin>>val;
+push(a,top,val);
+break;
+}
+case 2:{pop(a,top);
+break;
+}
+case 3:disp(a,top);
+break;
+case 4:exit(0);
+break;
+default:cout<<"\nwrong entry";
+}
+}while(ch<4);
+}

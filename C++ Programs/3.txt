@@ -1,0 +1,65 @@
+//Program to perform data file handling to read, calculate and display contents of files
+
+
+
+# include <iostream.h> 
+# include <fstream.h> 
+# include <conio.h>
+# include <process.h>
+
+
+
+void main() 
+{ 
+clrscr(); 
+int a1[10],a2[10],a3[10],i,n;
+fstream fa1,fa2,fa3; 
+cout<<"\n\nEnter how many elements to be added: ";
+cin>>n;
+fa1.open("a1.dat",ios::in|ios::out); 
+fa2.open("a2.dat",ios::in|ios::out);
+fa3.open("a3.dat",ios::in|ios::out);
+
+
+
+cout<<"\n\nEnter the elements of file A1: \n";
+for(i=0;i<n;i++)
+{ 
+cout<<"\nEnter an element";
+cin>>a1[i];
+fa1<<a1[i]; 
+} 
+
+
+
+cout<<"\n\nEnter the elements of file A2: \n";
+for(i=0;i<n;i++)
+{
+cout<<"\nEnter an element:";
+cin>>a2[i];
+fa2<<a2[i];
+}
+
+
+
+cout<<"\n\nEnter the elements of file A3: \n";
+for(i=0;i<n;i++)
+{
+cout<<"\nEnter an element";
+cin>>a3[i];
+fa3<<a3[i];
+}
+
+
+
+cout<<"\n Reading the files.....";	
+cout<<"\nA1.dat \tA2.dat\t A3.dat\t Total\n";
+for (i=0;i<n;i++) 
+{
+cout<<a1[i]<<"\t"<<a2[i]<<"\t"<<a3[i]<<"\t\t"<<a1[i]+a2[i]+a3[i]<<"\n";
+}
+fa1.close();
+fa2.close(); 
+fa3.close();
+getch();
+}

@@ -1,0 +1,78 @@
+//Program to perform insertion and deletion of elements in an array
+
+
+
+#include<iostream.h>
+#include<process.h>
+#include<conio.h>
+#define n 5
+
+void read(int a[n])
+{
+int i;
+for(i=0;i<n;i++)
+{
+cout<<"\n Enter array elements";
+cin>>a[i]; }}
+void display(int a[n])
+{ int i;
+cout<<"\n\n";
+for(i=0;i<n;i++)
+cout<<"\n"<<a[i];
+}
+void insert(int a[n])
+{
+ int i,j,data,pos;
+ cout<<"\nEnter data to insert:";
+ cin>>data;
+ cout<<"\nenter position:";
+ cin>>pos;
+ if(pos ==n-1)
+ a[pos]=data;
+ else
+ {
+ for(i=n-1;i>=pos;i--)
+ a[i]=a[i-1];
+ a[pos]=data;
+ }
+ }
+void del(int a[n])
+{
+int i,data,pos;
+cout<<"\nEnter data to delete:";
+cin>>data;
+for(i=0;i<n;i++)
+{
+if(data==a[i])
+{pos=i;
+}}
+for(i=pos;i<n;i++)
+{
+a[i]=a[i+1];
+a[n-1]=NULL;
+}}
+void main()
+{
+int ch, a[n];
+clrscr();
+do{
+cout<<"\n MAIN MENU";
+cout<<"\n\n1.read array\n2.Insertion\n3.Deletion\n4.display\n5.exit";
+cout<<"\nEnter choice:";
+cin>>ch;
+switch(ch)
+{
+case 1:read(a);
+break;
+case 2:insert(a);
+break;
+case 3:del(a);
+break;
+case 4:display(a);
+break;
+case 5:exit(0);
+break;
+default:cout<<"\nwrong entry";
+}
+}while(ch<6);
+}

@@ -1,0 +1,103 @@
+//Program to enter a string and count no. of words,digits,alphabets and vowels
+
+
+
+#include<iostream.h> 
+#include<string.h>
+#include<ctype.h>
+#include<conio.h>
+#include<process.h>
+
+
+
+void cvowels(char st[80]);
+void cwords(char st[80]);
+void ndigits(char st[80]);
+void nalphabets(char st[80]);
+
+
+
+void main()
+{
+clrscr();
+char st[80];
+int ch;
+cout<<"\n Enter string \n ";
+cin.getline(st,80);
+do
+{
+ cout<<"\n Main menu \n ";
+ cout<<"l. Count vowels \n";
+ cout<<"2. Count words\n";
+ cout<<"3. Count digits\n ";
+ cout<<"4. Count alphabets\n";
+ cout<<"5. Exit\n";
+ cout<<"\n Enter your choice";
+ cin>>ch;
+switch(ch)
+                          {
+ case 1: cvowels(st);
+break;
+    case 2: cwords(st);
+break;
+    case 3: ndigits(st);
+break;
+    case 4: nalphabets(st);
+break;
+    case 5: exit(0);
+break;
+default: cout<<"\nWrong Entry";
+}
+}
+while(ch<=5);
+}
+
+
+
+
+void cvowels(char st[80])
+{
+int cv=0;
+   for(int i=0;st[i] !='\0';i++)
+
+                if(st[i]=='a'||st[i]=='e'||st[i]=='i'||st[i]=='o'||st[i]=='u')
+    cv++;
+   cout<<"\n no of vowels = "<<cv;
+   }
+
+
+
+
+void cwords(char st[80])
+{
+int w=1;
+  for( int i=0; st[i]!='\0'; i++)
+
+if(st[i] ==' '||st[i]=='.')
+w++;
+cout<<"\n no of words = "<<w;
+}
+
+
+
+
+void ndigits(char st[80])
+{
+    int d=0;
+          for(int i=0; st[i] !='\0'; i++)
+    if(isdigit( st[i]))
+    d++;
+    cout<<"\n no of digits = "<<d;
+}
+
+
+
+
+void nalphabets(char st[80])
+{
+  int a=0;
+         for(int i=0; st[i]!='\0'; i++)
+  if(isalpha(st[i]) )
+   a++;
+   cout<<"\n no of alphabets = "<<a;
+ }
